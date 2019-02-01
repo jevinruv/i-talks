@@ -1,0 +1,48 @@
+<div class="container">
+  <h3>View Participants</h3>
+  <br>
+
+  <div class="form-group row">
+    <label for="selectedTalk" class="col-sm-4 col-form-label">Name of the Talk</label>
+    <div class="col-sm-5">
+      <input id="selectedTalk" (change)="selectedTalk($event)" list="newTalks" class="form-control" name="selectedTalk" required>
+      <datalist id="newTalks">
+        <option *ngFor="let newTalk of newTalkList" [value]="newTalk.Talk_ID">{{newTalk.Name}}</option>
+      </datalist>
+    </div>
+  </div>
+
+<div *ngIf="items.length">
+  <data-table 
+  id="participantList" 
+  [items]="items"
+  [itemCount]="itemCount"
+  [substituteRows]="false"
+
+  >
+    <data-table-column
+    [property]="'First_Name'"
+    [header]="'First Name'"
+    >
+    </data-table-column>
+
+    <data-table-column
+    [property]="'Last_Name'"
+    [header]="'Last Name'"
+    >
+    </data-table-column>
+
+    <data-table-column
+    [property]="'Company'"
+    [header]="'Company'"
+    >
+    </data-table-column>
+
+    <data-table-column
+    [property]="'Email'"
+    [header]="'Email'"
+    >
+    </data-table-column>
+
+  </data-table>
+</div>

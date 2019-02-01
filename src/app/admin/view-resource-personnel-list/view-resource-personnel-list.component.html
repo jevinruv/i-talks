@@ -1,0 +1,72 @@
+<div class="container">
+    <h3>View Resource Personnels</h3>
+
+    <data-table
+    [items]="items"
+    [itemCount]="itemCount"
+    (reload)="reloadItems($event)"
+    [multiSelect]="true"
+    [selectColumn]="true"
+    [substituteRows]="false"
+    >
+    
+        <data-table-column
+        [property]="'First_Name'"
+        [header]="'First Name'"
+        [sortable]="true"
+        [resizable]="true"
+        > 
+        </data-table-column>
+    
+        <data-table-column
+        [property]="'Last_Name'"
+        [header]="'Last Name'"
+        [sortable]="true"
+        [resizable]="true"
+        >
+        </data-table-column>
+    
+        <data-table-column
+        [property]="'Current_Role'"
+        [header]="'Current_Role'"
+        [sortable]="true"
+        [resizable]="true"
+        >
+        </data-table-column>
+    
+        <data-table-column
+        [property]="'Email'"
+        [header]="'Email'"
+        [sortable]="true"
+        [resizable]="true"
+        >
+        </data-table-column>
+    
+        <data-table-column
+        [property]="'CV_Link'"
+        [header]="'CV Link'"
+        [sortable]="true"
+        [resizable]="true"
+        >
+            <ng-template #dataTableCell let-item="item">
+                <a [href]="[item.CV_Link]">Download</a>
+            </ng-template>
+        </data-table-column>
+    
+        <data-table-column
+        [property]="'Person_ID'"
+        [width]="50"
+        >
+            <!-- <ng-template #dataTableCell let-item="item">
+                <a (click)="do(item)" [routerLink]="['/admin/resource-personnel/', item.Person_ID]">Edit</a>
+            </ng-template> -->
+        </data-table-column>
+    
+    </data-table>
+    
+    <div class="pull-right mt-3">
+        <input type="button" class="btn btn-success" (click)="onAccept()" value="Accept">
+        <input type="button" class="btn btn-danger" (click)="onReject()" value="Reject">
+    </div>
+
+    </div>

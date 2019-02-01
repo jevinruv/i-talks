@@ -1,0 +1,42 @@
+<div class="container">
+
+   <data-table
+    [items]="items"
+    [itemCount]="itemCount"
+    [substituteRows]="false"
+    [multiSelect]="true"
+    [selectColumn]="true"
+    (reload)="reloadItems($event)"
+    >
+    
+      <data-table-column
+      [property]="'Name'"
+      [header]="'iTalk Name'"
+      >
+      </data-table-column> 
+      
+      <data-table-column
+      [property]="'Resource_Personnel'"
+      [header]="'Resource Personnel'"
+      >
+      </data-table-column>
+    
+      <data-table-column
+      [property]="'Date'"
+      [header]="'Date'"
+      >
+      </data-table-column>
+    
+      <data-table-column
+      [property]="'Time'"
+      [header]="'Time'"
+      >
+      </data-table-column>
+    
+    </data-table> 
+
+    <div class="pull-right mt-3">
+        <input type="button" class="btn btn-danger" (click)="onDelete()" value="Delete">
+    </div>
+
+  </div>

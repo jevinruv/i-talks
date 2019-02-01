@@ -1,0 +1,10 @@
+<navbar *ngIf='!showNav'></navbar>
+
+<main role="main">
+  <!-- <router-outlet></router-outlet> -->
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</main>
+
+<hr>
+
+<app-footer></app-footer>

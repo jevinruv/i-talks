@@ -1,0 +1,17 @@
+<div class="mr-3 ml-3">
+  <ul class='circle-container'>
+
+    <li *ngFor="let pastTalk of pastTalkList | slice:0:8;" ngbPopover="{{pastTalk.Name}}" triggers="mouseenter:mouseleave" popoverTitle="{{pastTalk.Name}}">
+      <a [routerLink]="['view-past-talk/', pastTalk.Talk_ID]">
+        <img src='http://api.randomuser.me/portraits/men/49.jpg'>
+      </a>
+    </li>
+
+    <li ngbPopover="Moere!" triggers="mouseenter:mouseleave" popoverTitle="Pop title">
+      <a href="http://google.com">
+        <img src='assets/icon_more.png'>
+      </a>
+    </li>
+
+  </ul>
+</div>
